@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="viewPane" prefHeight="649.0" prefWidth="1057.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.saintcat.client.fractals.FractalController">
+    <children>
+        <Button layoutX="682.0" layoutY="548.0" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="365.0" text="Построить" />
+      <Label fx:id="coordinatsLabel" alignment="BOTTOM_RIGHT" layoutX="808.0" layoutY="582.0" prefHeight="53.0" prefWidth="232.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="patternComboBox" layoutX="888.0" layoutY="14.0" prefHeight="56.0" prefWidth="162.0" promptText="Готовый шаблон" visibleRowCount="4" />
+      <ScrollPane layoutX="685.0" layoutY="14.0" prefHeight="228.0" prefViewportHeight="200.0" prefViewportWidth="357.0" prefWidth="192.0">
+         <content>
+            <Pane fx:id="patternPanel" layoutX="686.0" layoutY="48.0" prefHeight="226.0" prefWidth="190.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="116.0" prefHeight="17.0" prefWidth="180.0" text="Здесь должен быть шаблон" />
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+      <Label layoutX="836.0" layoutY="263.0" prefHeight="25.0" prefWidth="162.0" text="Количество итераций" />
+      <TextField fx:id="iterNumberField" layoutX="685.0" layoutY="263.0" prefHeight="25.0" prefWidth="140.0" />
+      <TextField fx:id="minSizeField" layoutX="685.0" layoutY="299.0" prefHeight="25.0" prefWidth="140.0" />
+      <Label layoutX="836.0" layoutY="299.0" prefHeight="25.0" prefWidth="162.0" text="Минимальный размер линии" />
+      <Label layoutX="843.0" layoutY="337.0" prefHeight="25.0" prefWidth="200.0" text="Вертиальное отображение от оси Х" />
+      <Label layoutX="838.0" layoutY="425.0" prefHeight="25.0" prefWidth="211.0" text="Отображение шаблона от оси Х" />
+      <Label layoutX="836.0" layoutY="375.0" prefHeight="17.0" prefWidth="200.0" text="Отображение шаблона от оси Х" />
+      <Label layoutX="838.0" layoutY="383.0" prefHeight="25.0" prefWidth="172.0" text="в зависимости от итерации" />
+      <ComboBox layoutX="687.0" layoutY="337.0" prefHeight="25.0" prefWidth="140.0" fx:id="xAxisComboBox" />
+      <ComboBox layoutX="687.0" layoutY="383.0" prefHeight="25.0" prefWidth="140.0" fx:id="xAxisByIteration" />
+      <ComboBox layoutX="687.0" layoutY="425.0" prefHeight="25.0" prefWidth="140.0" fx:id="xAxisBySegmentNumber" />
+      <Label layoutX="835.0" layoutY="442.0" prefHeight="17.0" prefWidth="192.0" text="в зависимости от номера отрезка" />
+      <Label fx:id="infoLabel" layoutX="4.0" layoutY="642.0" prefHeight="17.0" prefWidth="620.0" textFill="#e12525" />
+      <ProgressIndicator fx:id="progressIndicator" layoutX="480.0" layoutY="273.0" prefHeight="102.0" prefWidth="106.0" progress="0.0" visible="false" />
+      <ScrollPane layoutX="14.0" layoutY="14.0" prefViewportHeight="563.0" prefViewportWidth="655.0">
+         <content>
+            <AnchorPane fx:id="paintPanel" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="655.0">
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Button layoutX="459.0" layoutY="598.0" mnemonicParsing="false" onAction="#handleDeleteLineAction" prefHeight="34.0" prefWidth="100.0" text="Удалить" />
+      <Button layoutX="565.0" layoutY="598.0" mnemonicParsing="false" onAction="#handleClearAction" prefHeight="34.0" prefWidth="106.0" text="Очистить все" />
+      <ComboBox fx:id="blankShapeBox" layoutX="343.0" layoutY="599.0" prefHeight="33.0" prefWidth="106.0" promptText="Заготовки" />
+      <Label layoutX="15.0" layoutY="587.0" prefHeight="53.0" prefWidth="321.0" text="Используйте левую кнопку мыши, чтобы рисовать линии, правую кнопку,чтобы отвязать привязку к точке и кнопку &quot;Удалить&quot;, чтобы удалить последнюю линию :)" textAlignment="CENTER" wrapText="true" />
+    </children>
+</AnchorPane>
